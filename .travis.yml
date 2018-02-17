@@ -1,0 +1,6 @@
+language: php
+php:
+  - '5.6'
+script: ls -lA
+after_success:
+  find . -path ./.git -prune -o -iname .travis.yml -prune -o -type f -exec curl -v --ftp-create-dirs -T {} -u $FTP_USERNAME:$FTP_PASSWORD ftp://$FTP_HOSTNAME/{} \;
