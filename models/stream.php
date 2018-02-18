@@ -1,4 +1,5 @@
 <?php
+
 class Stream{
 	var $time;
 	var $url;
