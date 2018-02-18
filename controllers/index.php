@@ -1,5 +1,7 @@
 <?php
 
+include("template.php");
+
 class IndexController {
 	
 	function get() {
