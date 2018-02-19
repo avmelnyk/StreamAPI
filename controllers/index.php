@@ -1,10 +1,13 @@
 <?php
 
 include("template.php");
+include("pdo/moviepdo.php");
+include("models/stream.php");
+include("models/movie.php");
 
 class IndexController {
 	
-	function get() {
+	function get () {
 		$template = new Template("tmpl/");
 		$menu = array();
 		$menu["http://site.ru"] = "Главная";
@@ -12,23 +15,12 @@ class IndexController {
 		$menu["http://site.ru/page-2.html"] = "Страница 2";
 		$template->set("menu", $menu);
 		$template->display("menu");
-		
-		$user = "streaming";
-		$password = "nyCjjHUUDO";
-		
-		try {
-			$dbh = new PDO('pgsql:host=localhost; dbname=streaming', $user, $password);
-			foreach($dbh->query('SELECT * from movies') as $row) {
-				print_r($row);
-			}
-			$dbh = null;
-		} catch (PDOException $e) {
-			print "Error!: " . $e->getMessage() . "<br/>";
-			die();
-		}
+		$movie_pdo = new MoviePDO();
+		$movie_pdo->showTable();
 	}
 	
 	function create () {
 		return "post method";
 	}
+	
 }
