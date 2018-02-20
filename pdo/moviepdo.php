@@ -1,19 +1,23 @@
 <?php
 
+
 class MoviePDO{
+	var $username;
+	var $password;
+	var $dbname;
+	var $table_name;
 	
-	function __construct () {
-		
+	function __construct ($username, $password,  $dbname, $table_name) {
+		$this-> username = $username;
+		$this-> password = $password;
+		$this-> dbname = $dbname;
+		$this-> table_name = $table_name;
 	}
 	
 	function showTable () {
-		$user = "streaming";
-		$password = "nyCjjHUUDO";
-		$dbname = "streaming";
-		$table_name = "movies";
 		try {
-			$dbh = new PDO('pgsql:host=localhost; dbname=' . $dbname, $user, $password);
-			foreach($dbh->query('SELECT * from ' . $table_name) as $row) {
+			$dbh = new PDO('pgsql:host=localhost; dbname=' . $this->dbname, $this->username, $this->password);
+			foreach($dbh->query('SELECT * from ' . $this->table_name) as $row) {
 				print_r($row);
 			}
 			$dbh = null;
@@ -21,6 +25,14 @@ class MoviePDO{
 			print "Error!: " . $e->getMessage() . "<br/>";
 			die();
 		}
+	}
+	
+	function addMovie (Movie $movie){
+		
+	}
+	
+	function get (){
+	
 	}
 	
 }
