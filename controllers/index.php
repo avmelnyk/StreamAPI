@@ -3,19 +3,13 @@
 include("template.php");
 include("pdo/moviepdo.php");
 include("models/stream.php");
-include("models/movie.php");
 include("passwordreader.php");
 
 class IndexController {
 	
 	function get () {
 		$template = new Template("tmpl/");
-		$menu = array();
-		$menu["http://site.ru"] = "Главная";
-		$menu["http://site.ru/page-1.html"] = "Страница 1";
-		$menu["http://site.ru/page-2.html"] = "Страница 2";
-		$template->set("menu", $menu);
-		$template->display("menu");
+		$template->display("index");
 		$password_reader = new PasswordReader();
 		$username = "streaming";
 		$password = $password_reader->readPassword("password.json");
