@@ -18,7 +18,7 @@ class IndexController {
 		$template->display("menu");
 		$password_reader = new PasswordReader();
 		$username = "streaming";
-		$password = $password_reader->readPaswword("password.json");
+		$password = $password_reader->readPassword("password.json");
 		$dbname = "streaming";
 		$table_name = "movies";
 		$movie_pdo = new MoviePDO($username, $password, $dbname, $table_name);
