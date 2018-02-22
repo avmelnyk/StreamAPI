@@ -55,7 +55,7 @@ var player = {
 
 var api = {
   current: function (offset) {
-    return fetch('/api/stream.json')
+    return fetch('streams')
       .then(function (r) {
         return r.json();
       });
