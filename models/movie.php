@@ -6,19 +6,19 @@ class Movie {
 	var $name;
 	var $rate;
 	var $length;
-	var $start;
-	var $end;
+	var $film_start;
+	var $film_end;
 	
-	function __construct ($id, $name,$rate, $length, $start, $end) {
+	function __construct ($id, $name,$rate, $length, $film_start, $film_end) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->rate = $rate;
 		$this->length = $length;
-		$this->start = $start;
-		$this->end = $end;
+		$this->film_start = $film_start;
+		$this->film_end = $film_end;
 	}
 	
 	function __toString () {
-		return $this->id . $this->name . $this->rate . $this->length . $this->start . $this->end;
+		return "Id:" . $this->id . " Name: " . $this->name . " Rate: " . $this->rate . " Length: " .  $this->length . " Start: " .$this->film_start ." End: " . $this->film_end . '<br/>';
 	}
 }

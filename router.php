@@ -1,5 +1,6 @@
 <?php
 
+
 class Router {
 	
 	static $statusMessage = [
@@ -34,12 +35,12 @@ class Router {
 					break;
 
 				case "POST":
-					echo $classInstance->create($urlParams);
+					echo $classInstance->create();
 					break;
 			}
 		}
 		else {
-				header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found"); 
+			header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");	
 		}
 	}
 
