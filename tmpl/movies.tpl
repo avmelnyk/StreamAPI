@@ -36,14 +36,6 @@
 				<td><input type="number" name="length"><br></td>
 			</tr>
 			<tr>
-				<td>Start: </td>
-				<td><input type="number" name="film_start"><br></td>
-			</tr>
-			<tr>
-				<td>End: </td>
-				<td><input type="number" name="film_end"><br></td>
-			</tr>
-			<tr>
 				<td colspan="2"><input type="submit" value="Add new movie"></td>
 			</tr>
 		</table>
@@ -55,8 +47,6 @@
 			<td><?=$movie->name?></td>
 			<td><?=$movie->rate?></td>
 			<td><?=$movie->length?></td>
-			<td><?=$movie->film_start?></td>
-			<td><?=$movie->film_end?></td>
 		</tr>
 	  <?php } ?>
 	</table>

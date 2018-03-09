@@ -29,13 +29,11 @@ class MoviePDO{
 	
 	function addMovie (Movie $movie) {
 		try {
-			$stmt = $this->pdo->prepare("INSERT INTO MOVIES(id, name, rate, length, film_start, film_end) VALUES(:id, :name, :rate, :length, :start, :end);");
+			$stmt = $this->pdo->prepare("INSERT INTO MOVIES(id, name, rate, length) VALUES(:id, :name, :rate, :length);");
 			$stmt->bindParam(':id', $movie->id);
 			$stmt->bindParam(':name', $movie->name, PDO::PARAM_STR);
 			$stmt->bindParam(':rate', $movie->rate);
 			$stmt->bindParam(':length', $movie->length);
-			$stmt->bindParam(':start', $movie->film_start);
-			$stmt->bindParam(':end', $movie->film_end);
 			$stmt->execute();
 		} catch (PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";
@@ -45,13 +43,11 @@ class MoviePDO{
 	
 	function updateMovieInfo (Movie $movie) {
 		try{
-			$stmt = $this->pdo->prepare("UPDATE movies SET name = :name, rate = :rate, length = :length, film_start = :film_start, film_end = :film_end   WHERE id = :id;");
+			$stmt = $this->pdo->prepare("UPDATE movies SET name = :name, rate = :rate, length = :length  WHERE id = :id;");
 			$stmt->bindParam(':id', $movie->id);
 			$stmt->bindParam(':name', $movie->name, PDO::PARAM_STR);
 			$stmt->bindParam(':rate', $movie->rate);
 			$stmt->bindParam(':length', $movie->length);
-			$stmt->bindParam(':film_start', $movie->film_start);
-			$stmt->bindParam(':film_end', $movie->film_end);
 			$stmt->execute();
 		} catch (PDOException $e){
 			print "Error!: " . $e->getMessage() . "<br/>";
