@@ -7,7 +7,7 @@ class Movie {
 	var $rate;
 	var $length;
 	
-	function __construct ($id, $name,$rate, $length) {
+	function __construct ($id, $name, $rate, $length) {
 		$this->id = $id;
 		$this->name = $name;
 		$this->rate = $rate;

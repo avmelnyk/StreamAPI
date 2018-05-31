@@ -4,6 +4,9 @@ include("router.php");
 
 class Application {
 	var $router;
+	var $program_element_pdo;
+	var $movie_pdo;
+	var $scheduler;
 
 	function __construct () {
 		$this->router = new Router();

@@ -29,10 +29,9 @@ class ProgramElementPDO{
 	
 	function addProgramElement (ProgramElement $element) {
 		try {
-			$stmt = $this->pdo->prepare("INSERT INTO Program( movie_id, movie_start, movie_end) VALUES(:movie_id, :movie_start, :movie_end);");
+			$stmt = $this->pdo->prepare("INSERT INTO Program( movie_id, movie_start) VALUES(:movie_id, :movie_start);");
 			$stmt->bindParam(':movie_id', $element->movie_id);
 			$stmt->bindParam(':movie_start', $element->movie_start);
-			$stmt->bindParam(':movie_end', $element->movie_end);
 			$stmt->execute();
 		}catch (PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";

@@ -17,9 +17,10 @@ class MoviePDO{
 	
 	function getAllMovies () {
 		try {
-			$sth = $this->pdo->prepare("SELECT * FROM MOVIES" );
+			$sth = $this->pdo->prepare("SELECT * FROM MOVIES");
 			$sth->execute();
-			$result = $sth->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, "movie");
+			$sth->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Movie');
+			$result = $sth->fetchAll();
 			return $result;
 		} catch (PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";

@@ -26,7 +26,7 @@ class MoviesController{
 	}
 	
 	function create () {
-		$movie = new Movie($_POST["id"],$_POST["name"], $_POST["rate"], $_POST["length"],$_POST["film_start"],$_POST["film_end"]);
+		$movie = new Movie($_POST["id"],$_POST["name"], $_POST["rate"], $_POST["length"]);
 		$this->movie_pdo->addMovie($movie);
 		$all_movies = $this->movie_pdo->getAllMovies();
 		$template = new Template("tmpl/");
