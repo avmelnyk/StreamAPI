@@ -27,8 +27,7 @@ class StreamsController {
 			$this->scheduler->scheduleProgaram();
 			$current_element = $this->program_element_pdo->getCurrentProgramElement()[0];
 			$current_movie =  $this->movie_pdo->getMovieById($current_element->movie_id)[0];
-			return  new Stream(0 , "movie.mp4");
-			//return  new Stream(time()-$current_element->movie_start,  $current_element->movie_id);
+			return  new Stream(time()-$current_element->movie_start,  $current_element->movie_id);
 	}
 	
 }
