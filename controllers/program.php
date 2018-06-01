@@ -1,7 +1,5 @@
 <?php
 
-include("pdo/programelementpdo.php");
-include("pdo/moviepdo.php");
 include("programscheduler.php");
 include("passwordreader.php");
 include("template.php");

@@ -1,8 +1,6 @@
 <?php
 
-include("pdo/moviepdo.php");
 include("models/stream.php");
-include("passwordreader.php");
 include("template.php");
 
 class MoviesController{

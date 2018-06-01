@@ -1,10 +1,6 @@
 <?php
 
 include("models/stream.php");
-include("pdo/programelementpdo.php");
-include("pdo/moviepdo.php");
-include("passwordreader.php");
-include("programscheduler.php");
 
 class StreamsController {
 	
@@ -24,7 +20,7 @@ class StreamsController {
 	}
 	
 	function get ($urlParams) {
-			$this->scheduler->scheduleProgaram();
+			//$this->scheduler->scheduleProgaram();
 			$current_element = $this->program_element_pdo->getCurrentProgramElement()[0];
 			$current_movie =  $this->movie_pdo->getMovieById($current_element->movie_id)[0];
 			return  new Stream(time()-$current_element->movie_start,  $current_element->movie_id);
