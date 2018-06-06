@@ -23,7 +23,6 @@ class Application {
 				header("HTTP/1.1 404 Not Found"); 
 			}
 		});
-		
 		$password_reader = new PasswordReader();
 		$username = "streaming";
 		$password = $password_reader->readPassword("password.json");
