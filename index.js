@@ -15,7 +15,7 @@ var player = {
     console.log('initializing HTML5 player');
     this._domNode = document.getElementById('player');
     this._domNode.controls = false;
-    // this._domNode.autoplay = true;
+    //this._domNode.autoplay = true;
   },
   load: function (url) {
     var that = this;

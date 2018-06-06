@@ -30,11 +30,12 @@ class MoviePDO{
 	
 	function addMovie (Movie $movie) {
 		try {
-			$stmt = $this->pdo->prepare("INSERT INTO MOVIES(id, name, rate, length) VALUES(:id, :name, :rate, :length);");
+			$stmt = $this->pdo->prepare("INSERT INTO MOVIES(id, name, rate, length, url) VALUES(:id, :name, :rate, :length, :url);");
 			$stmt->bindParam(':id', $movie->id);
 			$stmt->bindParam(':name', $movie->name, PDO::PARAM_STR);
 			$stmt->bindParam(':rate', $movie->rate);
 			$stmt->bindParam(':length', $movie->length);
+			$stmt->bindParam(':url', $movie->url);
 			$stmt->execute();
 		} catch (PDOException $e) {
 			print "Error!: " . $e->getMessage() . "<br/>";

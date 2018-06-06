@@ -3,7 +3,7 @@
 include("programscheduler.php");
 include("passwordreader.php");
 include("template.php");
-
+ini_set('display_errors', 0);
 
 class ProgramController {
 	

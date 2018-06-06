@@ -1,6 +1,7 @@
 <?php
 
 include("template.php");
+ini_set('display_errors', 0);
 
 
 class IndexController {
